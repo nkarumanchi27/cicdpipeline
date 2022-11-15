@@ -3,7 +3,7 @@ pipeline {
     environment {
         PROJECT_ID = 'bitnami--yv-rtlewq'
         CLUSTER_NAME = 'cicdpipeline'
-        LOCATION = 'us-entrail1'
+        LOCATION = 'us-central1'
         CREDENTIALS_ID = 'cicdpipeline'
     }
     stages {
