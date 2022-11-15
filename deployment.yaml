@@ -15,25 +15,25 @@ spec:
     spec:
       containers:
       - name: hello
+        # Replace $LOCATION with your Artifact Registry location (e.g., us-west1).
+        # Replace $GCLOUD_PROJECT with your project ID.
         image: nkarumanchi27/hello:latest
-        imagePullPolicy: Always
+        # This app listens on port 8080 for web traffic by default.
         ports:
-        - containerPort: 5000
+        - containerPort: 8080
         env:
           - name: PORT
-            value: 5000
-
+            value: "8080"
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
-name: hello
+  name: hello
 spec:
   type: LoadBalancer
   selector:
     app: hello
   ports:
-  - port: 5000
-    targetPort: 5000
+  - port: 80
+    targetPort: 8080
 ---
