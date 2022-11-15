@@ -18,8 +18,10 @@ spec:
         image: nkarumanchi27/hello:latest
         imagePullPolicy: Always
         ports:
-      - containerPort: 5000
-        name: hello
+        - containerPort: 5000
+        env:
+          - name: PORT
+            value: 5000
 
 ---
 
